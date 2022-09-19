@@ -6,6 +6,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -50,13 +51,29 @@ Select select;
 @Test
     public void test2() {
     //           1.Kategori menusunden Books seceneginisecin
-    //           2.Arama kutusuna Java yazin vearatin
-    //           3.Bulunan sonuc sayisiniyazdirin
-    //           4.Sonucun Java kelimesini icerdigini testedin
     WebElement ddm=driver.findElement(By.xpath("//*[@id='searchDropdownBox']"));
     select=new Select(ddm);
     select.selectByVisibleText("Books");//eger dropdown menudeki option'a string olarak ulaşmak istersek
     select.selectByIndex(5);//eger ddm'sunun index'i ile ulaşmak istersek
+    System.out.println(select.getFirstSelectedOption().getText());// eger ddm'ndeki option'a value ile ulaşmak istersek bu methodu kullanırız
+    /*
+    Dropdown menude sectigimiz option'a ulaşmak istersek select.getFirstSelectedOption()
+    methodunu kullanırız
+     */
+
+    //           2.Arama kutusuna Java yazin vearatin
+  driver.findElement(By.id("twotabsearchtextbox")).sendKeys("Java", Keys.ENTER);
+    //           3.Bulunan sonuc sayisiniyazdirin
+    WebElement sonuc=driver.findElement(By.xpath("//*[text()='1-16 of over 30,000 results for']"));
+    System.out.println(sonuc.getText());
+    List<WebElement> result=driver.findElements(By.xpath("//*[text()='1-16 of over 30,000 results for']"));
+    System.out.println(result.stream().findFirst().get().getText().split(" ")[3]);
+    //           4.Sonucun Java kelimesini icerdigini testedin
+    String actualWord=sonuc.getText();
+    Assert.assertFalse(actualWord.contains("Java"));
+
+
+
 
 }
 }

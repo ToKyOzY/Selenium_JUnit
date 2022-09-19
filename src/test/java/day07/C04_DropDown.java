@@ -48,7 +48,11 @@ public class C04_DropDown {
         List<WebElement> drops=select.getOptions();
         drops.stream().forEach(t-> System.out.println(t.getText()));
         //----for each ile
+        for (WebElement e:drops
+             ) {
+            System.out.println(e.getText());
 
+        }
 
         //Dropdown’un boyutunu bulun, Dropdown’da 4 öğe varsa konsolda True , degilse
         //False yazdırın.
