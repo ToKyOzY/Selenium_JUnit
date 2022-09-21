@@ -1,12 +1,16 @@
 package z_practice.homeworks;
 
+import day10_utilities.TestBaseBeforeAfter;
+import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class Q03 {
+public class Q03 extends TestBaseBeforeAfter {
+@Test
+    public void test1(){
 
- //1. Bir class oluşturun: LoginTest
-    //2. Main method oluşturun ve aşağıdaki görevi tamamlayın.
+}
+
     //a. http://a.testaddressbook.com adresine gidiniz.
     //b. Sign in butonuna basin
     //c. email textbox,password textbox, and signin button elementlerini locate ediniz..

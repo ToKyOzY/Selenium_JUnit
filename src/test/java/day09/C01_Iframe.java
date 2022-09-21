@@ -27,7 +27,7 @@ public class C01_Iframe {
     }
     @After
     public void tearDown() {
-        //driver.quit();
+        driver.quit();
     }
     @Test
     public void test1() throws InterruptedException {
@@ -48,7 +48,9 @@ public class C01_Iframe {
         Thread.sleep(2000);
         //       ○ TextBox’in altinda bulunan “Elemental Selenium” linkini textinin gorunur oldugunu
         //         dogrulayin ve konsolda yazdirin
-        //driver.findElement(By.xpath("//*[text()='Elemental Selenium']"));
-
+        driver.switchTo().defaultContent();//Iframe'de cıkıp Ana sayfaya gecmek icin bu method kullanılır.
+        WebElement elemantal=driver.findElement(By.xpath("//*[text()='Elemental Selenium']"));
+        Assert.assertTrue(elemantal.isDisplayed());
+        System.out.println(elemantal.getText());
     }
 }
