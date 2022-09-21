@@ -1,15 +1,31 @@
 package z_practice.homeworks;
 
-public class Q05 {
-    //2.ChromeDriver kullanarak, facebook sayfasina gidin ve sayfa basliginin (title) "facebook"
-    //oldugunu dogrulayin (verify), degilse dogru basligi yazdirin.
+import org.junit.Assert;
+import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
+import z_practice.repetitions.R02_Utilities;
 
-    //3.Sayfa URL'inin "facebook" kelimesi icerdigini dogrulayin, icermiyorsa "actual" URL'i
-    //yazdirin.
-    //4.https://www.walmart.com/ sayfasina gidin.
-    //5. Sayfa basliginin "Walmart.com" icerdigini dogrulayin.
-    //6. Tekrar "facebook" sayfasina donun
-    //7. Sayfayi yenileyin
-    //8. Sayfayi tam sayfa (maximize) yapin
-    //9.Browser'i kapatin
+import java.util.Arrays;
+import java.util.List;
+
+public class Q05 extends R02_Utilities {
+    @Test
+    public void test(){
+        //2- https://www.google.com/ adresine gidin
+        driver.get("https://www.google.com/");
+        //3- cookies uyarisini kabul ederek kapatin
+        //4 Sayfa basliginin “Google” ifadesi icerdigini test edin
+        Assert.assertTrue(driver.getTitle().contains("Google"));
+        //5 Arama cubuguna “Nutella” yazip aratin
+        driver.findElement(By.xpath("//*[@name='q']")).sendKeys("Nutella", Keys.ENTER);
+        //6 Bulunan sonuc sayisini yazdirin
+        System.out.println("Result : "+driver.findElement(By.xpath("//*[text()='Yaklaşık 126.000.000 sonuç bulundu']")).getText());
+        //7 sonuc sayisinin 10 milyon’dan fazla oldugunu test edin
+       List<WebElement> result=driver.findElements(By.xpath("//*[text()='Yaklaşık 126.000.000 sonuç bulundu']"));
+        System.out.println(result.stream().findFirst().get().getText().split(" ")[1]);
+        //8 Sayfayi kapatin
+    }
+
 }
