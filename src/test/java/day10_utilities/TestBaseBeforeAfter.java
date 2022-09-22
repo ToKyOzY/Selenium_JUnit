@@ -1,5 +1,6 @@
 package day10_utilities;
 
+import com.github.javafaker.Faker;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
 import org.junit.Before;
@@ -12,7 +13,7 @@ import java.time.Duration;
 public abstract class TestBaseBeforeAfter {
     protected WebDriver driver;
     protected Actions actions;
-
+    protected Faker faker;
     @Before
     public void setUp() {
         WebDriverManager.chromedriver().setup();
@@ -20,6 +21,7 @@ public abstract class TestBaseBeforeAfter {
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         actions=new Actions(driver);
+        faker=new Faker();
     }
     @After
     public void tearDown() {
