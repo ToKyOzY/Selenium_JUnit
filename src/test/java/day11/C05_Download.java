@@ -8,7 +8,7 @@ import org.openqa.selenium.By;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-public class C05_FileExist extends TestBaseBeforeAfter {
+public class C05_Download extends TestBaseBeforeAfter {
     @Test
     public void test1() {
         //4-https://the-internet.herokuapp.com/download adresine gidelim.

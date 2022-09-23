@@ -29,7 +29,6 @@ public class C01_Actions extends TestBaseBeforeAfter {
                 sendKeys("7").sendKeys("1").sendKeys(Keys.ENTER).
                 perform();
         //aramanin gerceklestigini test edin
-        WebElement aramaSonucu=driver.findElement(By.xpath("(//div[@class='sg-col-inner'])[1]"));
-        Assert.assertTrue(aramaSonucu.isDisplayed());
+        Assert.assertTrue(driver.findElement(By.xpath("(//div[@class='sg-col-inner'])[1]")).isDisplayed());
     }
 }

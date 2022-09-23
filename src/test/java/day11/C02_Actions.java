@@ -16,13 +16,13 @@ public class C02_Actions extends TestBaseBeforeAfter {
         //3- Ad, soyad, mail ve sifre kutularina deger yazalim ve kaydol tusuna basalim
         WebElement isim= driver.findElement(By.xpath("//*[@class='inputtext _58mg _5dba _2ph-'][1]"));
         isim.sendKeys("Zeynep");
-        actions.sendKeys(Keys.TAB).sendKeys("Sarıkaya").sendKeys(Keys.TAB).sendKeys("052873264297").
-                sendKeys(Keys.TAB).sendKeys("12345").
+        actions.sendKeys(Keys.TAB).sendKeys("Sarıkaya").sendKeys(Keys.TAB).sendKeys("zzz@gmail.com").
+                sendKeys(Keys.TAB).sendKeys("zzz@gmail.com").sendKeys(Keys.TAB).sendKeys("123456").
                 sendKeys(Keys.TAB).sendKeys(Keys.TAB).sendKeys("8").sendKeys(Keys.TAB).
-                sendKeys("Oct").sendKeys(Keys.TAB).sendKeys("2022").sendKeys(Keys.TAB).sendKeys(Keys.TAB).
+                sendKeys("Oct").sendKeys(Keys.TAB).sendKeys("1985").sendKeys(Keys.TAB).sendKeys(Keys.TAB).
                 sendKeys(Keys.RIGHT).sendKeys(Keys.LEFT).sendKeys(Keys.TAB).
                 sendKeys(Keys.TAB).sendKeys(Keys.TAB).sendKeys(Keys.TAB).sendKeys(Keys.TAB).sendKeys(Keys.ENTER).
                 perform();
-        //4- Kaydol tusuna basalim
+
     }
 }
