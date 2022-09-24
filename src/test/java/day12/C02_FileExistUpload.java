@@ -6,7 +6,7 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-public class C02_Upload extends TestBaseBeforeAfter {
+public class C02_FileExistUpload extends TestBaseBeforeAfter {
     @Test
     public void test1() {
         //https://the-internet.herokuapp.com/upload adresine gidelim
