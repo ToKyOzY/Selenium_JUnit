@@ -1,3 +1,4 @@
+
 package day13;
 
 import day10_utilities.TestBaseBeforeAfter;
@@ -9,8 +10,10 @@ import org.openqa.selenium.WebElement;
 import java.util.List;
 
 public class C02_WebTables extends TestBaseBeforeAfter {
+
     @Test
     public void test1() {
+
         //Bir class oluşturun : C02_WebTables
         //login( ) metodun oluşturun ve oturum açın.
         login();
@@ -25,9 +28,11 @@ public class C02_WebTables extends TestBaseBeforeAfter {
         //table body’sinde bulunan toplam satir(row) sayısını bulun.
         //Table body’sinde bulunan satirlari(rows) konsolda yazdırın.
         //4.satirdaki(row) elementleri konsolda yazdırın.
+
     }
 
     private void table() {
+
         /*
         Tabloda <Table> tag'ı altında tablonun başlıgını gösteren <Thead> tag'ı bulunur. Eger başlıkda satır varsa(row)
         Thead tag'ı altında <tr> (satır- row) tag'ı vardır ve başlıktaki sütunlara yani
@@ -37,7 +42,7 @@ public class C02_WebTables extends TestBaseBeforeAfter {
          */
 
         //Tüm table body’sinin boyutunu(sutun sayisi) bulun.
-      List<WebElement>tableSayisi= driver.findElements(By.xpath("//thead//tr//th"));
+        List<WebElement>tableSayisi= driver.findElements(By.xpath("//thead//tr//th"));
         System.out.println(tableSayisi.size());
         //Table’daki tum body’I ve başlıkları(headers) konsolda yazdırın.
         WebElement basliklar=driver.findElement(By.xpath("//thead//tr"));
@@ -62,5 +67,7 @@ public class C02_WebTables extends TestBaseBeforeAfter {
         driver.get("https://www.hotelmycamp.com/admin/HotelRoomAdmin");
         WebElement userName=driver.findElement(By.xpath("//*[@id='UserName']"));
         actions.click(userName).sendKeys("manager").sendKeys(Keys.TAB).sendKeys("Manager1!").sendKeys(Keys.TAB).sendKeys(Keys.ENTER).perform();
+
     }
+
 }

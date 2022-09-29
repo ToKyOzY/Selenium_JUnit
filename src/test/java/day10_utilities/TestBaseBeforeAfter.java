@@ -19,7 +19,7 @@ public abstract class TestBaseBeforeAfter {
         WebDriverManager.chromedriver().setup();
         driver=new ChromeDriver();
         driver.manage().window().maximize();
-        //driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         actions=new Actions(driver);
         faker=new Faker();
     }

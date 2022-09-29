@@ -63,7 +63,8 @@ public class C01_Cookies extends TestBaseBeforeAfter {
             System.out.println(sayac + ". value: " + w.getValue());
             sayac++;
         }
-        Assert.assertTrue(!allCookie.contains("skin"));
+        Cookie isim=driver.manage().getCookieNamed("skin");
+        Assert.assertTrue(!allCookie.contains(isim));
             //8-tum cookie’leri silin ve silindigini test edin
             driver.manage().deleteAllCookies();
             allCookie=driver.manage().getCookies();
