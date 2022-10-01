@@ -27,7 +27,13 @@ public class C02_WriteExcel {
         //8) 15.satir nufus kolonuna 54000 yazdiralim
         workBook.getSheet("Sayfa1").getRow(14).createCell(4).setCellValue("54.000");
         //9)Dosyayi kaydedelim
-        FileOutputStream fos=new FileOutputStream(doyaYolu);//
+        FileOutputStream fos=new FileOutputStream(doyaYolu);
+        //Excel dosyamıza veri girişi yaptıktan sonra dosyayı akışa aldıgımız gibi sonlandırmamız gerekir
+        // sonrasında da workbook objemize kayıt etmemiz gerekir
+        workBook.write(fos);//write methodu ile sonlandırdıgımız işlemi workbook2a yazdırdır.
         //10)Dosyayi kapatalim
+        fis.close();
+        fos.close();
+        workBook.close();
     }
 }
